@@ -2238,10 +2238,12 @@
 	input[type="email"],
 	select {
 		height: 3em;
+		margin-bottom: 1.5em;
 	}
 
 	textarea {
 		padding: 0.75em 1em;
+		margin-bottom: 2em;
 	}
 
 	select option {
@@ -2326,27 +2328,27 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(86, 89, 90, 0.5) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(86, 89, 90, 0.5) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(86, 89, 90, 0.5) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(86, 89, 90, 0.5) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
+		color: rgba(86, 89, 90, 0.5) !important;
 		opacity: 1.0;
 	}
 
