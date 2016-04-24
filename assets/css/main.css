@@ -2671,6 +2671,14 @@
 						padding: 0 0 0 0.5em;
 					}
 
+	ul.contact {
+		list-style: none;
+	}
+	
+	ul.contact li {
+		margin-bottom: 0.75em;
+	}
+					
 	dl {
 		margin: 0 0 2em 0;
 	}
