@@ -3485,7 +3485,7 @@
 		font-weight: 700;
 	}
 	
-	#inline-form {
+	.inline-form {
 		min-width: 30vw;
 	}
 
@@ -4026,7 +4026,7 @@
 						padding: 0;
 					}
 			
-			#inline-form {
+			.inline-form {
 				min-width: 80vw;
 				max-width: 85vw;
 			}

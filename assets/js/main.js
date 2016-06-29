@@ -321,28 +321,28 @@
 	});
 	
 	// Forms validation
-	$(".ajax-form").validate({
+	$(".ajax-form-msg").validate({
 		rules: {
 			name: {
 			required: true,
 			minlength: 2
 			},
-			phone: {
+			email: {
 			required: true,
-			minlength: 10
+			email: true
 			},
 			message: {
 			required: true,
 			}
 		},
 		messages: {
-			name: "Пожалуйста, укажите Ваше имя",
-			phone: {
-			  required: "Пожалуйста, укажите Ваш телефон для подтверждения заказа",
-			  minlength: "Номер телефона не может быть короче 10 символов"
+			name: "Укажите Ваше имя",
+			email: {
+			  required: "Укажите Ваш e-mail",
+			  email: "Формат: name@domain.com"
 			},
 			message: {
-			  required: "Пожалуйста, укажите необходимые параметры товара"
+			  required: "Напишите нам что-нибудь"
 			}
 		},
 		// errorPlacement: function(error, element) {
@@ -350,13 +350,44 @@
 		submitHandler: function(form) {
 			$.ajax({
 				dataType: "jsonp",
-				url: "http://getsimpleform.com/messages/ajax?form_api_token=de9720bd366aac7b944cd1e046e0cda9",
-				data: $(".ajax-form").serialize() 
+				url: "http://getsimpleform.com/messages/ajax?form_api_token=f346c137e5a7ca4624adddbae2e9b3a4",
+				data: $(".ajax-form-msg").serialize() 
 				}).done(function() {
 				//callback which can be used to show a thank you message
 				//and reset the form
-				$(".ajax-form").hide();
-				$(".form-thank-you").fadeIn("400");
+				$(".ajax-form-msg").hide();
+				$(".form-thank-you-msg").fadeIn("400");
+			});
+			return false; //to stop the form from submitting
+		}
+	});
+	
+	$(".ajax-form-callback").validate({
+		rules: {
+			name: {
+			required: true,
+			minlength: 2
+			},
+			phone: {
+			required: true
+			}
+		},
+		messages: {
+			name: "Укажите Ваше имя",
+			phone: "Укажите Ваш телефон"
+		},
+		// errorPlacement: function(error, element) {
+		// },
+		submitHandler: function(form) {
+			$.ajax({
+				dataType: "jsonp",
+				url: "http://getsimpleform.com/messages/ajax?form_api_token=f346c137e5a7ca4624adddbae2e9b3a4",
+				data: $(".ajax-form-callback").serialize() 
+				}).done(function() {
+				//callback which can be used to show a thank you message
+				//and reset the form
+				$(".ajax-form-callback").hide();
+				$(".form-thank-you-callback").fadeIn("400");
 			});
 			return false; //to stop the form from submitting
 		}
