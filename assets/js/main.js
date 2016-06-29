@@ -296,5 +296,70 @@
 				._parallax();
 
 	});
+	
+	// Fancybox init
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			padding		: 0,
+			autoSize : true,
+			fitToView : true,
+			beforeLoad : function() {         
+				this.width  = parseInt(this.element.data('fancybox-width'));  
+				this.height = parseInt(this.element.data('fancybox-height'));
+				this.fitToView  = !(this.element.data('fancybox-fit') == false);
+			},
+			helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0,
+						showEarly : true
+						}
+					}
+		});
+	});
+	
+	// Forms validation
+	$(".ajax-form").validate({
+		rules: {
+			name: {
+			required: true,
+			minlength: 2
+			},
+			phone: {
+			required: true,
+			minlength: 10
+			},
+			message: {
+			required: true,
+			}
+		},
+		messages: {
+			name: "Пожалуйста, укажите Ваше имя",
+			phone: {
+			  required: "Пожалуйста, укажите Ваш телефон для подтверждения заказа",
+			  minlength: "Номер телефона не может быть короче 10 символов"
+			},
+			message: {
+			  required: "Пожалуйста, укажите необходимые параметры товара"
+			}
+		},
+		// errorPlacement: function(error, element) {
+		// },
+		submitHandler: function(form) {
+			$.ajax({
+				dataType: "jsonp",
+				url: "http://getsimpleform.com/messages/ajax?form_api_token=de9720bd366aac7b944cd1e046e0cda9",
+				data: $(".ajax-form").serialize() 
+				}).done(function() {
+				//callback which can be used to show a thank you message
+				//and reset the form
+				$(".ajax-form").hide();
+				$(".form-thank-you").fadeIn("400");
+			});
+			return false; //to stop the form from submitting
+		}
+	});
 
 })(jQuery);

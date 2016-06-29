@@ -8,7 +8,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.min.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<link rel="stylesheet" href="assets/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
@@ -457,14 +457,31 @@
 							<ul class="actions">
 								<li><a href="form_callback.html" class="button special fancybox" data-fancybox-type="iframe" data-fancybox-width="500" data-fancybox-height="330">Заказать звонок</a></li>
 								<li><a href="form_msg.html" class="button alt fancybox" data-fancybox-type="iframe" data-fancybox-width="500" data-fancybox-height="600">Написать нам</a></li>
+								<li><a href="#inline-form" class="button alt fancybox" data-fancybox-fit="false">Написать нам</a></li>
 							</ul>
 						</footer>
-						<!-- <form method="post" action="#" class="container 50%">
-							<div class="row uniform 50%">
-								<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special" /></div>
+						<div style="display:none">
+							<div id="inline-form">
+								<section class="wrapper style4 special container">
+									<div class="content">
+										<form action="#" class="ajax-form">
+											<input type="text" class="name" name="name" placeholder="Ваше имя*">
+											<input type="text" class="email" name="email" placeholder="E-mail*">
+											<input type="text" class="phone" name="phone" placeholder="Номер телефона">
+											<textarea name="message" class="message" placeholder="Ваше сообщение*"></textarea>
+											<div class="form-btn">
+												<input type="submit" class="submit button special" value="Отправить">
+											</div>
+										</form>
+										<div class="form-thank-you" style="display:none;">
+											 <h3>Спасибо за заказ!</h3>
+											 <p>Наши менеджеры свяжутся с Вами в самое ближайшее время.</p>
+										</div>
+									</div> 
+								</section>
 							</div>
-						</form> -->
+						</div>
+						
 					</div>
 				</section>
 				
@@ -528,36 +545,14 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.validate.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.min.js"></script>
-			
 			<script type="text/javascript" src="assets/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-			<script type="text/javascript">
-			$(document).ready(function() {
-				$(".fancybox").fancybox({
-					padding		: 0,
-					autoSize : false,
-					beforeLoad : function() {         
-						this.width  = parseInt(this.element.data('fancybox-width'));  
-						this.height = parseInt(this.element.data('fancybox-height'));
-					},
-					helpers: {
-							title : {
-								type : 'outside'
-							},
-							overlay : {
-								speedOut : 0,
-								showEarly : true
-								}
-							}
-				});
-			});
-			</script>
+			<script src="assets/js/main.js"></script>
 			<script async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhVVXo6YEQbJaryZPqmx8g_SqMln8x8jY&extension=.js&callback=initMap'></script>
 			<script> 
 			function initMap() {
