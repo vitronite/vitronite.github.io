@@ -350,7 +350,7 @@
 		submitHandler: function(form) {
 			$.ajax({
 				dataType: "jsonp",
-				url: "http://getsimpleform.com/messages/ajax?form_api_token=f346c137e5a7ca4624adddbae2e9b3a4",
+				url: "https://getsimpleform.com/messages/ajax?form_api_token=f346c137e5a7ca4624adddbae2e9b3a4",
 				data: $(".ajax-form-msg").serialize() 
 				}).done(function() {
 				//callback which can be used to show a thank you message
@@ -381,7 +381,7 @@
 		submitHandler: function(form) {
 			$.ajax({
 				dataType: "jsonp",
-				url: "http://getsimpleform.com/messages/ajax?form_api_token=f346c137e5a7ca4624adddbae2e9b3a4",
+				url: "https://getsimpleform.com/messages/ajax?form_api_token=f346c137e5a7ca4624adddbae2e9b3a4",
 				data: $(".ajax-form-callback").serialize() 
 				}).done(function() {
 				//callback which can be used to show a thank you message
